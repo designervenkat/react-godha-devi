@@ -1,3 +1,7 @@
+import { MdDelete, MdCheckCircle } from 'react-icons/md'
+
+import Button from './components/Button'
+
 function App() {
    return (
       <div className='bg-slate-800 h-screen w-screen grid place-content-center'>
@@ -12,6 +16,18 @@ function App() {
                height={20}
             />
          </div>
+         <Button variant='primary'>Primary</Button>
+         <Button
+            variant='success'
+            icon={<MdCheckCircle />}>
+            Success
+         </Button>
+         <Button
+            variant='danger'
+            icon={<MdDelete />}>
+            Danger
+         </Button>
+         <Button variant='ghost'>Ghost</Button>
       </div>
    )
 }
