@@ -1,3 +1,6 @@
+import CountFunc from './components/CountFunc'
+import Products from './components/Products'
+
 function App() {
    return (
       <div className='bg-slate-800 h-screen w-screen grid place-content-center'>
@@ -12,6 +15,16 @@ function App() {
                height={20}
             />
          </div>
+
+         {/* Life Cycle Methods */}
+
+         {/* <CountFunc /> */}
+
+         <Products />
+
+         {/* componentDidMount - initial render */}
+         {/* componentDidUpdate - when variable or component update it's  re-render */}
+         {/* componentWillUnmount - when component are about to distory thing will do */}
       </div>
    )
 }
