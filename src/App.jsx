@@ -64,7 +64,6 @@ function App() {
                                  type='text'
                                  value={password}
                                  ref={passwordEl}
-                                 disabled
                                  className='block w-full py-4 pl-10 pr-4 text-white placeholder-gray-500 transition-all duration-200 bg-slate-500   focus:outline-none'
                               />
                               <button
