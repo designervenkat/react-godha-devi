@@ -12,7 +12,6 @@ export default function ProductDetails() {
       async function getProduct() {
          const response = await fetch(`https://dummyjson.com/products/${id}`)
          const data = await response.json()
-         //  console.log(data)
          setProduct(data)
       }
 
