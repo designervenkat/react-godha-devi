@@ -3,7 +3,14 @@ import { createRoot } from 'react-dom/client'
 
 import './index.css'
 
-import { About, Contact, Home, Layout } from './components'
+import {
+   About,
+   Contact,
+   Home,
+   Products,
+   Layout,
+   ProductDetails,
+} from './components'
 
 import {
    createBrowserRouter,
@@ -45,6 +52,14 @@ const router = createBrowserRouter(
          <Route
             path='about-us'
             element={<About />}
+         />
+         <Route
+            path='products'
+            element={<Products />}
+         />
+         <Route
+            path='products/:id'
+            element={<ProductDetails />}
          />
          <Route
             path='contact'

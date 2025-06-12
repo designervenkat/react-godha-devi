@@ -11,6 +11,10 @@ export default function HeaderSection() {
          path: '/about-us',
       },
       {
+         title: 'Products',
+         path: '/products',
+      },
+      {
          title: 'Contact',
          path: '/contact',
       },
