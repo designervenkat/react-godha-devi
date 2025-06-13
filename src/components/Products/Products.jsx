@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router'
+import { Link, useLoaderData } from 'react-router'
 
 export default function Products() {
-   const [products, setProducts] = useState([])
+   const products = useLoaderData()
+   //    const [products, setProducts] = useState([])
 
-   useEffect(() => {
-      async function getAllProducts() {
-         const response = await fetch('https://dummyjson.com/products')
-         const data = await response.json()
-         setProducts(data.products)
-      }
+   //    useEffect(() => {
+   //       async function getAllProducts() {
+   //          const response = await fetch('https://dummyjson.com/products')
+   //          const data = await response.json()
+   //          setProducts(data.products)
+   //       }
 
-      getAllProducts()
-   }, [])
+   //       getAllProducts()
+   //    }, [])
 
    console.log(products)
 

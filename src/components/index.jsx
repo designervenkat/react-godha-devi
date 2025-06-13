@@ -10,6 +10,8 @@ import Contact from './Contact/Contact'
 import HeaderSection from './Header/Header'
 import FooterSection from './Footer/Footer'
 
+import Dashboard from './Dashboard/Dashboard'
+
 export {
    Layout,
    Home,
@@ -20,4 +22,5 @@ export {
    Loader,
    HeaderSection,
    FooterSection,
+   Dashboard,
 }

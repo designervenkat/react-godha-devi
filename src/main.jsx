@@ -10,7 +10,14 @@ import {
    Products,
    Layout,
    ProductDetails,
+   Dashboard,
 } from './components'
+
+import Admin from './components/Shared/Admin'
+import PrivateRoutes from './components/PrivateRoutes'
+import Login from './components/Login/Login'
+
+import getAllProducts from './components/Products/Products'
 
 import {
    createBrowserRouter,
@@ -19,53 +26,51 @@ import {
    RouterProvider,
 } from 'react-router'
 
-// const router = createBrowserRouter([
-//    {
-//       path: '/',
-//       element: <Layout />,
-//       children: [
-//          {
-//             path: '',
-//             element: <Home />,
-//          },
-//          {
-//             path: 'about-us',
-//             element: <About />,
-//          },
-//          {
-//             path: 'contact',
-//             element: <Contact />,
-//          },
-//       ],
-//    },
-// ])
-
 const router = createBrowserRouter(
    createRoutesFromElements(
-      <Route
-         path='/'
-         element={<Layout />}>
+      <>
          <Route
-            path=''
-            element={<Home />}
-         />
+            path='/'
+            element={<Layout />}>
+            <Route
+               path=''
+               element={<Home />}
+            />
+            <Route
+               path='about-us'
+               element={<About />}
+            />
+            <Route
+               loader={async () => {
+                  const response = await fetch('https://dummyjson.com/products')
+                  const data = await response.json()
+                  return data.products
+               }}
+               path='products'
+               element={<Products />}
+            />
+            <Route
+               path='products/:id'
+               element={<ProductDetails />}
+            />
+            <Route
+               path='contact'
+               element={<Contact />}
+            />
+         </Route>
+
+         <Route element={<PrivateRoutes />}>
+            <Route
+               path='dashboard'
+               element={<Dashboard />}
+            />
+         </Route>
+
          <Route
-            path='about-us'
-            element={<About />}
+            path='login'
+            element={<Login />}
          />
-         <Route
-            path='products'
-            element={<Products />}
-         />
-         <Route
-            path='products/:id'
-            element={<ProductDetails />}
-         />
-         <Route
-            path='contact'
-            element={<Contact />}
-         />
-      </Route>
+      </>
    )
 )
 
